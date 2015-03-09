@@ -170,11 +170,12 @@
 			void main( void ) {
 
                 float speed = 1.0;
-float scale = 1.0;
-                vec2 direction = vec2(0.01, -0.03);
+                float scale = 1.0;
+
+                vec2 direction = vec2(0.00, -1.0);
                 direction *= speed;
 
-				vec3 coord = vec3( v_texCoord.x*scale + time*direction.x, v_texCoord.y*scale + time*direction.y, -time );
+				vec3 coord = vec3( v_texCoord.x*5.0 + time*direction.x, v_texCoord.y*scale + time*direction.y, -time );
 
 				float n = surface( coord );
 
@@ -187,8 +188,8 @@ float scale = 1.0;
 
                 //n = n * n;
 				//gl_FragColor = vec4( vec3( n, n, n ), alpha);
-				//gl_FragColor = vec4( vec3( 1.0,1.0,1.0 ), alpha);
-				gl_FragColor = vec4( vec3( 1.0,1.0,1.0 ), n);
+				gl_FragColor = vec4( vec3( 1.0,1.0,1.0 ), alpha);
+				//gl_FragColor = vec4( vec3( 1.0,1.0,1.0 ), n);
 				//gl_FragColor = vec4( coord, 1.0 );
 
 			}
